@@ -1,0 +1,7 @@
+
+<form method="post">
+    {% csrf_token %}
+    <h1>Desea eliminar la divisa {{ object }}?</h1>
+    <button type="submit">confirmar</button>
+    <a href="{% url 'index' %}">Cancelar</a>
+</form>

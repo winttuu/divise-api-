@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block body %}
+    <h1>{% block title %}Template de listado {% endblock title %}</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>divise</th>
+                <th>usd price:</th>
+                <th>OPCION</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for currency in list %}
+                <tr>
+                    <td>{{ list.divise }}</td>
+                    <td>{{ currency.usd_price }}</td>
+                    <td><a href="{% url 'edit_currency' currency.id %}">EDITAR</a> <a href="{% url 'delete_currency' currency.id %}">ELIMINAR</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endblock body %}
+</body>
+</html>

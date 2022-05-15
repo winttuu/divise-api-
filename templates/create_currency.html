@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% block title %}Currency form {% endblock title %}
+{% block body %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Crear o editar</button>
+</form>
+
+{% endblock body %}
+
